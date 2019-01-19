@@ -7,3 +7,5 @@
 
 # .tfvars files
 *.tfvars
+
+s3-tester/bin
