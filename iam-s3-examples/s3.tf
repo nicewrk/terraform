@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "nicewrk_service" {
   bucket = "nicewrk-service"
 
   lifecycle {
-    prevent_destroy = false
+    prevent_destroy = true
   }
 }
 
