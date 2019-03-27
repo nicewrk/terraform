@@ -36,12 +36,6 @@ By default, Terraform will use the credentials stored in `~/.aws`. To override o
 
 To download necessary plugins, run `terraform init`.
 
-After adding/modifying files, run `terraform fmt`. 😎👍
-
-View the dependency graph by running `terraform graph`. [GraphViz it!](http://dreampuf.github.io/GraphvizOnline)
-
-Check the plan: `terraform plan`.
-
 ### Variables
 Variables (of type "string", "list", or "map") may be added via the `default` attribute, using the `-var` option, the `-var-file` option, `*.tfvars` files, an env var format matching `TF_VAR_<variable_name>`, or via prompt (if no value can be determined).
 
@@ -58,11 +52,19 @@ user_data = <<-EOF
             EOF
 ```
 
+## Checking/Validating 🔍
+
+After adding/modifying files, run `terraform fmt` (`make fmt`). 😎👍
+
+View the dependency graph by running `terraform graph` (`make graph`). [GraphViz it!](http://dreampuf.github.io/GraphvizOnline)
+
+Check the plan: `terraform plan` (`make plan`).
+
 ## Provisioning
 `make`
 - Runs `terraform fmt` followed by `terraform apply`.
 
-## Tearing Down
-`terraform destroy`
-
 Target specific outputs after provisioning: `terraform output <name>`
+
+## Tearing Down 💣
+`terraform destroy` (`make destroy`)
