@@ -12,7 +12,7 @@ resource "aws_iam_access_key" "nicewrk_service" {
 }
 
 data "aws_iam_policy_document" "nicewrk_service" {
-  policy_id = "nicewrk-service"
+  policy_id = "nicewrk-service-s3-access"
 
   statement {
     actions = [
@@ -26,7 +26,8 @@ data "aws_iam_policy_document" "nicewrk_service" {
 }
 
 resource "aws_iam_policy" "nicewrk_service" {
-  name   = "nicewrk-service"
+  name   = "nicewrk-service-policy"
+  description = "Nicewrk Service user policy"
   policy = "${data.aws_iam_policy_document.nicewrk_service.json}"
 }
 
